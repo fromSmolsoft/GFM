@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox alignment="TOP_CENTER" prefHeight="600" prefWidth="800" spacing="1.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.smol.gfm.controller.MainController">
+
+    <ToolBar prefHeight="20.0" HBox.hgrow="ALWAYS">
+        <Button fx:id="btnLoad" onAction="#onLoadButtonClick" text="Load file"/>
+        <Button fx:id="btnRun" onAction="#onProccesBtnCLick" text="Process file"/>
+        <Button fx:id="btnExport" onAction="#onExportBtnCLick" text="Export"/>
+        <HBox HBox.hgrow="ALWAYS"/>
+        <ProgressIndicator fx:id="progressIndicator" prefHeight="20" visible="false"/>
+        <!--Todo About -->
+        <Button fx:id="btnAbout" onAction="#onAboutBtnCLick" text="About" visible="false"/>
+    </ToolBar>
+
+    <SplitPane dividerPositions="0.5">
+
+        <ScrollPane>
+            <Label text="Original"/>
+            <Label fx:id="labelOldDocument" alignment="TOP_LEFT" text="Original" wrapText="true"/>
+        </ScrollPane>
+
+        <ScrollPane>
+            <Label text="Processed"/>
+            <Label fx:id="labelNewDocument" alignment="TOP_LEFT" text="Processed" wrapText="true"/>
+        </ScrollPane>
+
+    </SplitPane>
+
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0"/>
+    </padding>
+</VBox>
