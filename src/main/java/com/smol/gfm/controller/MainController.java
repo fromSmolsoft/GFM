@@ -40,24 +40,20 @@ public class MainController {
 
     @FXML
     protected void onLoadButtonClick(ActionEvent event) {
-        //Todo file picker
         oldDocument = readDocument(event);
-        //todo create dedicated viewmodel instead of object.toString()
         labelOldDocument.setText(oldDocument.toString());
-
     }
 
     @FXML
     protected void onProccesBtnCLick() {
         XmlProcessor processor = new XmlProcessor();
         newDocument = processor.processDoc(oldDocument);
-        //todo create dedicated viewmodel instead of object.toString()
         labelNewDocument.setText(newDocument.toString());
     }
 
     /** Temporary method */
     @SneakyThrows
-    private DocumentObj readDocument(Event event) { /* todo handle exception */
+    private DocumentObj readDocument(Event event) {
         fileManager = new FileManager();
         XmlReader   reader      = new XmlReader(fileManager.openFile(event));
         DocumentObj documentObj = null;
@@ -73,18 +69,17 @@ public class MainController {
     }
 
     public void onAboutBtnCLick(ActionEvent actionEvent) {
-        //Todo about popup
+        MyDialog myDialog = new MyDialog();
+        myDialog.show();
     }
 
     @SneakyThrows
     public void onExportBtnCLick(ActionEvent actionEvent) {
         fileManager = new FileManager();
         XmlWriter writer = new XmlWriter(newDocument, fileManager.saveFile(actionEvent));
-        //todo remove path after writing filechoser saver
-//        Path      path   = Path.of(XmlConst.PATH_EX_MAIL_FILTERS_XML);
-//        writer.setExportFile(path);
         writer.completeDocument();
-
     }
 
 }
+
+//todo create dedicated viewmodel instead of object.toString()

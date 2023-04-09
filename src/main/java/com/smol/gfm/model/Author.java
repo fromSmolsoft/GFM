@@ -6,5 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Author {
-    private String name, email;
+    private String name;
+    private String email;
 }

@@ -14,7 +14,7 @@
         <HBox HBox.hgrow="ALWAYS"/>
         <ProgressIndicator fx:id="progressIndicator" prefHeight="20" visible="false"/>
         <!--Todo About -->
-        <Button fx:id="btnAbout" onAction="#onAboutBtnCLick" text="About" visible="false"/>
+        <Button fx:id="btnAbout" onAction="#onAboutBtnCLick" text="About" />
     </ToolBar>
 
     <SplitPane dividerPositions="0.5">

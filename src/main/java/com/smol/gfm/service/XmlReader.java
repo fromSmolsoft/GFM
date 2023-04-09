@@ -31,6 +31,7 @@ public class XmlReader {
         log.info("Reading file.");
         //init
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
         dbf.setNamespaceAware(true);
 
         DocumentBuilder db   = dbf.newDocumentBuilder();

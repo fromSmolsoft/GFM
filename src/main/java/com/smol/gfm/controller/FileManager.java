@@ -11,12 +11,12 @@ import java.nio.file.Paths;
 
 public class FileManager {
 
-    private FileChooser fileChooser;
+    private final FileChooser fileChooser;
 
     public FileManager() {
         fileChooser = new FileChooser();
         fileChooser.setInitialDirectory(Paths.get(System.getProperty("user.home"), "Documents")
-                .toFile()); //Todo if user/documents doesn't exist.
+                .toFile());
         fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("XML files (*.xml)", "*.xml"));
     }
 
@@ -27,7 +27,7 @@ public class FileManager {
             if (file.getName().endsWith(".xml")) {
                 return Path.of(file.getPath());
             } else {
-                throw new Exception(file.getName() + " has invalid file-extension."); //Todo define exception
+                throw new Exception(file.getName() + " has invalid file-extension.");
             }
         } else return null;
     }

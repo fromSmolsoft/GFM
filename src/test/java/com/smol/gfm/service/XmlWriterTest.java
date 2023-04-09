@@ -17,7 +17,7 @@ class XmlWriterTest {
     @BeforeEach
     void setUp() {
         Path importPath = Path.of(XmlConst.PATH_MAIL_FILTERS_XML);
-        Path exportPath = Path.of(XmlConst.PATH_MAIL_FILTERS_XML);
+        Path exportPath = Path.of(XmlConst.PATH_EX_MAIL_FILTERS_XML);
         xmlReader = new XmlReader(importPath);
         xmlWriter = new XmlWriter(xmlReader.read(),exportPath);
 
