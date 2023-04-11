@@ -8,13 +8,13 @@
       xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.smol.gfm.controller.MainController">
 
     <ToolBar prefHeight="20.0" HBox.hgrow="ALWAYS">
-        <Button fx:id="btnLoad" onAction="#onLoadButtonClick" text="Load file"/>
-        <Button fx:id="btnRun" onAction="#onProccesBtnCLick" text="Process file"/>
-        <Button fx:id="btnExport" onAction="#onExportBtnCLick" text="Export"/>
+        <Button  onAction="#onLoadButtonClick" text="Load file"/>
+        <Button  onAction="#onProcessBtnCLick" text="Process file"/>
+        <Button  onAction="#onExportBtnCLick" text="Export"/>
         <HBox HBox.hgrow="ALWAYS"/>
         <ProgressIndicator fx:id="progressIndicator" prefHeight="20" visible="false"/>
-        <!--Todo About -->
-        <Button fx:id="btnAbout" onAction="#onAboutBtnCLick" text="About" />
+
+        <Button  onAction="#onAboutBtnCLick" text="About" />
     </ToolBar>
 
     <SplitPane dividerPositions="0.5">

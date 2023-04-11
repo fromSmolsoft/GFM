@@ -36,5 +36,8 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### others ###
 /.idea/sonarlint/
 /.mailmap
+*.orig

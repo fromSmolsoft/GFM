@@ -1,5 +1,6 @@
 package com.smol.gfm.controller;
 
+import com.smol.gfm.exception.InvalidFileExtension;
 import javafx.event.Event;
 import javafx.scene.Node;
 import javafx.stage.FileChooser;
@@ -20,14 +21,14 @@ public class FileManager {
         fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("XML files (*.xml)", "*.xml"));
     }
 
-    public Path openFile(Event event) throws Exception {
+    public Path openFile(Event event) throws InvalidFileExtension {
         Window window = ((Node) event.getTarget()).getScene().getWindow();
         File   file   = fileChooser.showOpenDialog(window);
         if (file != null) {
             if (file.getName().endsWith(".xml")) {
                 return Path.of(file.getPath());
             } else {
-                throw new Exception(file.getName() + " has invalid file-extension.");
+                throw new InvalidFileExtension();
             }
         } else return null;
     }
